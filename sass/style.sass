@@ -1,0 +1,448 @@
+@use "mixins"
+@use "variables"
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Public Sans', sans-serif
+
+body
+    overflow-x: hidden
+
+p
+    font-size: 18px
+    line-height: 1.6em
+    color: variables.$grey-text
+
+h1
+    color: variables.$blue-dark
+
+h3
+    color: variables.$blue-dark
+    font-weight: normal
+
+.request-button
+    background: linear-gradient(90deg, variables.$green-light 0%, variables.$blue-light 100%)
+    padding: 0.8rem 2rem
+    max-width: variables.$max-width
+    border: none
+    font-weight: bold
+    color: variables.$background-color-whiteg
+    border-radius: 30px
+    cursor: pointer
+    white-space: nowrap
+
+    &:hover
+        background: linear-gradient(90deg, variables.$green-light-hover 0%, variables.$blue-light-hover 100%)
+
+.container-head
+    width: 100%
+    @include mixins.width-top
+    @include mixins.center-mode
+
+
+    .hb-box
+        display: none
+
+    .hb-box-a
+        width: 100%
+        height: 400px
+        display: flex
+        align-items: center
+        position: absolute
+        background: linear-gradient(180deg, rgba(62,67,106,1) 0%, rgba(0,212,255,0) 100%)
+
+        .hb-list
+            width: 90%
+            @include mixins.center-mode
+            display: flex
+            flex-direction: column
+            list-style-type: none
+            background: white
+            text-align: center
+            border-radius: 10px
+            margin-bottom: 5rem
+
+            .start-li
+                padding: 2rem 0 .7rem 0
+
+            .end-li
+                padding: .7rem 0 2rem 0
+
+            li
+                padding: .7rem 0
+
+                a
+                    color: variables.$blue-dark
+                    font-weight: normal
+                    text-decoration: none
+
+
+    nav
+        width: 80%
+        @include mixins.flex-mode
+        @include mixins.center-mode
+        align-items: center
+
+        .hb-icon-d
+            display: none
+
+        .cl-icon
+            display: none
+
+        .cl-icon-a
+            display: flex
+
+        img
+            padding: 2rem 0
+
+        button
+            @include mixins.mobile
+                display: none
+
+        .hb-icon
+            display: none
+
+            @include mixins.mobile
+                display: flex
+
+        ul
+            display: flex
+            list-style-type: none
+
+            @include mixins.mobile
+                display: none
+
+            li
+                padding: 2rem 1rem
+
+                a
+                    color: variables.$grey-text
+                    text-decoration: none
+
+                    &::after
+                        display: flex
+                        content: ""
+                        position: absolute
+                        width: 0
+                        margin: 1.7rem 0 0 0
+
+                        transition: .4s
+
+                    &:hover
+                        &::after
+                            display: flex
+                            content: ""
+                            position: absolute
+                            width: 2.7rem
+                            height: .3rem
+                            margin: 1.7rem 0 0 0
+                            background: linear-gradient(90deg, variables.$green-light 0%, variables.$blue-light 100%)
+                        
+.article-start
+    width: 100%
+    background-color: variables.$background-color-whiteg
+    background-image: url(/imgs/bg-intro-desktop.svg)
+    background-repeat: no-repeat
+    background-size: 1000px
+    background-position: 700px -250px
+    display: flex
+    justify-content: flex-end
+    @include mixins.width-top
+    @include mixins.center-mode
+    &-intern
+        @include mixins.flex-mode
+        align-items: center
+        justify-content: space-between
+        width: 90%
+        .box-start
+            width: 40%
+            h1
+                font-size: 45px
+                font-weight: normal
+                margin: 1rem 0
+
+            p
+                margin: 1rem 0
+            
+            button
+                margin: 1rem 0
+
+        img
+            margin: -101px -60px -100px 0
+            width: 550px
+            clip-path: inset(15% 0 0 0)
+        
+        @include mixins.mobile
+            flex-direction: column-reverse
+            text-align: center
+            width: 80%
+            .box-start
+                width: 100%
+                margin-bottom: 3rem
+                h1
+                    font-size: 45px
+                    font-weight: normal
+                    margin: 1rem 0
+
+                p
+                    margin: 1rem 0
+                
+                button
+                    margin: 1rem 0
+
+            img
+                margin: 0
+                width: 400px
+                clip-path: none
+
+        @include mixins.mobile-3
+
+            img
+                margin: 0
+                width: 300px
+                clip-path: none
+            
+
+    @include mixins.mobile
+        justify-content: center
+        align-items: center
+        background-color: variables.$background-color-whiteg
+        background-image: url(/imgs/bg-intro-mobile.svg)
+        background-repeat: no-repeat
+        background-size: 100%
+        background-position: center -450px
+
+    @include mixins.mobile-2
+        background-color: variables.$background-color-whiteg
+        background-image: url(/imgs/bg-intro-mobile.svg)
+        background-repeat: no-repeat
+        background-size: 100%
+        background-position: center -150px
+
+
+    
+
+.article-middle
+    @include mixins.width-top
+    @include mixins.center-mode
+    @include mixins.flex-mode
+    flex-direction: column
+    align-items: center
+    width: 100%
+    background-color: variables.$background-color-whitegl
+
+    .box-middle-first
+        width: 80%
+        margin: 8rem 0 5rem 0
+
+        h1
+            font-size: 35px
+            font-weight: normal
+            padding: 0 0 2rem 0
+        @include mixins.mobile
+            text-align: center
+
+
+    .box-middle-second
+        width: 80%
+        @include mixins.flex-mode
+        flex-wrap: wrap
+        margin: 0 0 8rem 0
+
+        &-card
+            width: 269px
+            padding: 0 2rem 0 0
+            margin: 1rem 0
+            h3
+                padding: 1rem 0
+                font-size: 20px
+            
+            p
+                font-size: 16px
+
+        @include mixins.mobile
+            flex-direction: column
+            align-content: center
+            &-card
+                width: 100%
+                text-align: center
+                padding: 0
+                margin: 1rem 0
+        
+
+.article-end
+    width: 100%
+    @include mixins.width-top
+    @include mixins.center-mode
+    @include mixins.flex-mode
+    background-color: variables.$background-color-whiteg
+    flex-direction: column
+    align-items: center
+    &-title
+        width: 80%
+        margin: 6rem 0 3rem 0
+
+        h1
+            font-size: 35px
+            font-weight: normal
+        
+    .box-end
+        width: 80%
+        @include mixins.flex-mode
+        flex-wrap: wrap
+
+        &-card
+            width: 269px
+            background-color: variables.$background-color-white
+            margin: 0 1rem 3rem 0
+            border-radius: 10px
+
+            h4
+                font-size: 18px
+                font-weight: normal
+                padding: 0 1rem 0 1rem
+                cursor: pointer
+                transition: .4s
+
+                &:hover
+                    color: variables.$green-light
+
+        &-img
+            width: 100%
+            height: 200px
+            border-radius:  10px 10px 0 0
+
+        &-little
+            font-size: 10px
+            padding: 1rem 1rem .8rem 1rem
+        
+        &-normal
+            font-size: 14px
+            padding: .7rem 1rem 1rem 1rem
+
+    @include mixins.mobile
+        &-title
+            text-align: center
+        .box-end
+            flex-direction: column
+            align-items: center
+            &-card
+                width: 400px
+
+            &-img
+                width: 100%
+                height: 300px
+                border-radius:  10px 10px 0 0
+
+    @include mixins.mobile-2
+        &-title
+            text-align: center
+        .box-end
+            flex-direction: column
+            align-items: center
+            &-card
+                width: 100%
+
+            &-img
+                width: 100%
+                height: 200px
+                border-radius:  10px 10px 0 0
+
+    
+            
+
+footer
+    width: 100%
+    @include mixins.width-top
+    @include mixins.center-mode
+    background-color: variables.$blue-dark
+    .box-principal
+        @include mixins.center-mode
+        @include mixins.flex-mode
+        width: 80%
+        .box-foot-first
+            margin: 3rem 0
+            &-logo
+                .medias
+                    margin: 0 .7rem 0 0
+                    border-radius: 5px
+                    cursor: pointer
+
+                .logo-branca
+                    margin: 0 0 3rem 0
+        .box-foot-second
+            display: flex
+            list-style-type: none
+            margin: 3rem 5rem 3rem 0
+            li
+                padding: 0 3rem 1rem 0
+
+                a
+                    font-size: 14px
+                    color: variables.$background-color-whitegl
+                    text-decoration: none
+                    font-weight: normal
+
+                    &:hover
+                        color: variables.$green-light
+
+        .box-foot-third
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+            margin: 3rem 0
+
+            button
+                margin: 0 0 1.5rem 0
+
+        @include mixins.mobile
+            flex-direction: column
+            text-align: center
+            .box-foot-first
+                margin: 3rem 0 1rem 0
+                &-logo
+                    .medias
+                        margin: .4rem .4rem
+                        border-radius: 5px
+                        cursor: pointer
+
+                    .logo-branca
+                        margin: 0 0 1rem 0
+
+            .box-foot-second
+                display: flex
+                flex-direction: column
+                margin: 0
+                li
+                    padding: .5rem 0
+
+                    a
+                        font-size: 14px
+                        color: variables.$background-color-whitegl
+                        text-decoration: none
+                        font-weight: normal
+
+                        &:hover
+                            color: variables.$green-light
+            .box-foot-third
+                display: flex
+                flex-direction: column
+                align-items: center
+                margin: 1rem 0
+
+                button
+                    margin: 0 0 1rem 0
+
+                p
+                    font-size: 13px
+
+
+
+
+
+
+
+    
+

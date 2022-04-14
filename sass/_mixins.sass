@@ -1,0 +1,23 @@
+@use "variables"
+    
+@mixin flex-mode
+    display: flex
+    justify-content: space-between
+
+@mixin center-mode
+    margin: 0 auto
+    
+@mixin width-top
+    max-width: 1440px
+
+@mixin mobile
+    @media (max-width: 920px)
+        @content
+
+@mixin mobile-2
+    @media (max-width: 600px)
+        @content
+
+@mixin mobile-3
+    @media (max-width: 420px)
+        @content
